@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Login</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Login Box Styling */
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .login-box h2 {
+            font-size: 28px;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-box button {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .login-box button:hover {
+            background-color: #e60000;
+        }
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ff4d4d;
+        }
+
+        /* Logout Image */
+        .logout-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .logout-image h2 {
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Box -->
+        <div class="login-box" id="login-box">
+            <h2>Valentine Login</h2>
+            <input type="text" id="username" placeholder="Enter Username">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="checkLogin()">Login</button>
+            <p class="message" id="message"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const message = document.getElementById('message');
+
+            if (username === "Talha" && password === "Balukona") {
+                document.body.innerHTML = `
+                    <div class="container">
+                        <div class="success">
+                            <h1>Love you Januuuu 😘</h1>
+                            <p>You make my heart flutter every day! 💕</p>
+                            <button class="logout-btn" onclick="logout()">Logout</button>
+                        </div>
+                    </div>`;
+            } else {
+                message.innerText = "How দুষ্টু 😾";
+            }
+        }
+
+        function logout() {
+            document.body.innerHTML = `
+                <div class="logout-image">
+                    <h2>Will You Be My Valentine?🙂</h2>
+<img src="love.jpg.jpg" width="300" alt="Logout Image">
+                </div>`;
+        }
+    </script>
+</body>
+</html>
